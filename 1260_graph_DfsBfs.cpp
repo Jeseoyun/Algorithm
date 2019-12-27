@@ -27,18 +27,17 @@ void dfs(vector<vector<int>> &adjList, vector<bool> &visited, int v){
 void bfs(vector<vector<int>> &adjList, vector<bool> &visited, int v){
 	visited[0] = true;
 	visited[v] = true;
-	//cout << "bfs visit " << v << endl;
 	queue<int> q;
 	q.push(v);
 	while(!q.empty()){
 		int temp = q.front();
+		//cout << "bfs visit " << temp << endl;
 		cout << temp <<" ";
 		q.pop();
 		for(int i=0; i<(int)adjList[temp].size(); i++){
 			int w = adjList[temp][i];
 			if(!visited[w]){
 				visited[w] = true;
-				//cout << "bfs visit " << w << endl;
 				q.push(w);
 			}
 		}
