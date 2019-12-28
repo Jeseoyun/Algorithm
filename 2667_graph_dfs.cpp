@@ -12,7 +12,7 @@
 #define MAX 25
 using namespace std;
 
-void dfs(int n, int i, int j, char map[][MAX], bool visited[][MAX], int &group, int house[]);
+void dfs(int n, int i, int j, char map[][MAX], bool visited[][MAX], int group, int house[]);
 
 int main(){
 	int n;	//지도의 크기
@@ -46,7 +46,7 @@ int main(){
 	return 0;
 }
 
-void dfs(int n, int i, int j, char map[][MAX], bool visited[][MAX], int &group, int house[]){
+void dfs(int n, int i, int j, char map[][MAX], bool visited[][MAX], int group, int house[]){
 	visited[i][j] = true;
 	//cout << "visit[" << i << "][" << j << "]" << endl;
 	//cout << "how many house in group " << group << "? " << house[group] << endl;
