@@ -1,6 +1,6 @@
 /*
  * countingSort.cpp
- * 백준 10989번_수 정렬하기3(counting sort)
+ * 백준 10989번_수 정렬하기3(counting sort)_error_메모리초과
  *
  *  Created on: 2020. 1. 5.
  *      Author: 제서윤
