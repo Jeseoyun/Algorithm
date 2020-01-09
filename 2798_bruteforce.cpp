@@ -10,8 +10,6 @@
 #include <iostream>
 using namespace std;
 
-int findMax(int a[], int n);
-
 int main(){
 	int n, m;
 	cin >> n >> m;
@@ -20,28 +18,16 @@ int main(){
 	for(int i=0; i<n; i++)
 		cin >> cards[i];
 
-	int sum[n] = {};
-	int sum_index = 0;
+	int maxi = 0;
 	for(int i=0; i<n; i++)
-		for(int j=i; j<n; j++)
-			for(int k=j; k<n; k++)
-				if(cards[i]+cards[j]+cards[k]>m){
-					cout << "m 초과! - " << cards[i]+cards[j]+cards[k] << endl;
-					break;
-				}
+		for(int j=i+1; j<n; j++)
+			for(int k=j+1; k<n; k++)
+				if(cards[i]+cards[j]+cards[k] > m)
+					continue;
 				else{
-					sum[sum_index] = cards[i]+cards[j]+cards[k];
-					cout << "sum[" << sum_index << "] : " <<   cards[i]+cards[j]+cards[k] << endl;
-					sum_index++;
+					if(maxi < cards[i]+cards[j]+cards[k])
+						maxi = cards[i]+cards[j]+cards[k];
 				}
-	cout << findMax(sum, sum_index+1);
+	cout << maxi;
 	return 0;
-}
-
-int findMax(int a[], int n){
-	int maxi = a[0];
-	for(int i=1; i<n; i++)
-		if(a[i-1]<a[i])
-			maxi = a[i];
-	return maxi;
 }
